@@ -14,4 +14,4 @@ jobs:
     env:
       ACTOR: ${{ github.actor }}
     steps:
-      - run: echo 'Hello "${{ inputs.name }}" by "${ ACTOR }"'
+      - run: echo "${ACTOR}"
