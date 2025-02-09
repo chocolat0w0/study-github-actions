@@ -11,5 +11,7 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
     steps:
-      - run: echo "Hello ${{ inputs.name }}"
+      - run: echo 'Hello "${{ inputs.name }}" by "${ ACTOR }"'
