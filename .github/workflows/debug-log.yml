@@ -8,3 +8,8 @@ jobs:
 
     steps:
       - run: echo "::debug::This is a debug message"
+
+      - run: |
+          echo "::group::Show environment variables"
+          printenv
+          echo "::endgroup::"
