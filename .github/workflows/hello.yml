@@ -1,8 +1,17 @@
-on: push
+name: Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Person to greet"
+        required: true
+        default: "World"
+
 jobs:
-  print:
+  hello:
     runs-on: ubuntu-latest
     env:
-      ACTOR: ${{ github.actor }} # コンテキストの値を環境変数へセット
+      ACTOR: ${{ github.actor }}
     steps:
-      - run: echo "${ACTOR}" # 環境変数経由でコンテキストのプロパティを参照
+      - run: echo "Hello ${{ inputs.name }} by ${ACTOR}"
