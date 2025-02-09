@@ -1,5 +1,10 @@
 name: Comment
 on: pull_request
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
   comment:
     runs-on: ubuntu-latest
